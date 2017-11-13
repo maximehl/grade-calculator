@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="grade-calculator-css.css">
+    <script src="grade-calculator.js"></script>
+</head>
+<body onload="startupColor()">
+
+<h1><span title="If you're here, you might as well give up already.">Grade Calculator</span></h1>
+
+<div id="center-align">
+    <div>
+        <table>
+            <tr>
+                <th colspan="2">Enter your grades in these categories:</th>
+            </tr>
+            <tr id="grade-0-row" onmouseover="colorRow(this.id, 0.6)" onmouseleave="colorRow(this.id, 0.4)">
+                <td>Homework Grade: </td>
+                <td><input type="text" id="grade-0" value="85" title="Enter your percent grade in this category."
+                           oninput="colorRow(this.id + '-row', 0.4)">
+                    <span>%</span></td>
+            </tr>
+            <tr id="grade-1-row" onmouseover="colorRow(this.id, 0.6)" onmouseleave="colorRow(this.id, 0.4)">
+                <td>Quizzes Grade: </td>
+                <td><input type="text" id="grade-1" value="85" title="Enter your percent grade in this category."
+                           oninput="colorRow(this.id + '-row', 0.4)">
+                    <span>%</span></td>
+            </tr>
+            <tr id="grade-2-row" onmouseover="colorRow(this.id, 0.6)" onmouseleave="colorRow(this.id, 0.4)">
+                <td>Tests Grade: </td>
+                <td><input type="text" id="grade-2" value="85" title="Enter your percent grade in this category."
+                           oninput="colorRow(this.id + '-row', 0.4)">
+                    <span>%</span></td>
+            </tr>
+            <tr id="grade-3-row" onmouseover="colorRow(this.id, 0.6)" onmouseleave="colorRow(this.id, 0.4)">
+                <td>Participation Grade: </td>
+                <td><input type="text" id="grade-3" value="85" title="Enter your percent grade in this category."
+                           oninput="colorRow(this.id + '-row', 0.4)">
+                    <span>%</span></td>
+            </tr>
+            <tr id="grade-4-row" onmouseover="colorRow(this.id, 0.6)" onmouseleave="colorRow(this.id, 0.4)">
+                <td>Midterm Grade: </td>
+                <td><input type="text" id="grade-4" value="85" title="Enter your percent grade on the midterm."
+                           oninput="colorRow(this.id + '-row', 0.4)">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <th colspan="2">Enter your weights in these categories:</th>
+            </tr>
+            <tr>
+                <td>Homework Weight: </td>
+                <td><input type="text" id="weight-0" value="20" title="Enter the percent of your grade that homework makes up.">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <td>Quizzes Weight: </td>
+                <td><input type="text" id="weight-1" value="15" title="Enter the percent of your grade that quizzes make up.">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <td>Tests Weight: </td>
+                <td><input type="text" id="weight-2" value="20" title="Enter the percent of your grade that tests make up.">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <td>Participation Weight: </td>
+                <td><input type="text" id="weight-3" value="10" title="Enter the percent of your grade that participation makes up.">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <td>Midterm Weight: </td>
+                <td><input type="text" id="weight-4" value="15" title="Enter the percent of your grade your midterm makes up.">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <td>Final Weight: </td>
+                <td><input type="text" id="weight-5" value="20" title="Enter the percent of your grade your final makes up.">
+                    <span>%</span></td>
+            </tr>
+            <tr>
+                <th colspan="2">Last, but not least:</th>
+            </tr>
+            <tr>
+                <td>What minimum grade do you want?</td>
+                <td><input type="text" id="desired-grade" value="90" title="Enter your desired minimum grade.">
+                    <span>%</span></td>
+            </tr>
+        </table>
+        <button onclick="displayCurrentGrade()"><span>Calculate my current grade!</span></button>
+        <br>
+        <button onclick="calculateGradeNeeded()"><span>Calculate the grade I need on my final!</span></button>
+    </div>
+
+    <div id="results-div">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Achtung.svg" id="warning-image">
+        <table id="results">
+        </table>
+        <div id="error-div"></div>
+    </div>
+</div>
+
+</body>
+</html>
